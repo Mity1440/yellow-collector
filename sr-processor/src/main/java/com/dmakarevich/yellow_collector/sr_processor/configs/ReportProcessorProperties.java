@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Data
 @NoArgsConstructor
-@ConfigurationProperties(prefix = "yellow-collector.processor")
+@ConfigurationProperties(prefix = "yellow-collector.sr-processor")
 public class ReportProcessorProperties {
 
     public Map<String, String> runners;
@@ -46,7 +46,7 @@ public class ReportProcessorProperties {
 
         if (rotation != null){
             return tryParseInt(
-                    rotation.get("existence.root.location.in.days"), 0);
+                    rotation.get("root-location-in-days"), 0);
         }
 
         return 0;
@@ -55,7 +55,7 @@ public class ReportProcessorProperties {
     public int getFileExistenceInErrorLocationInDays(){
         if (rotation != null){
             return tryParseInt(
-                    rotation.get("existence.error.location.in.days"), 0);
+                    rotation.get("error-location-in-days"), 0);
         }
 
         return 0;

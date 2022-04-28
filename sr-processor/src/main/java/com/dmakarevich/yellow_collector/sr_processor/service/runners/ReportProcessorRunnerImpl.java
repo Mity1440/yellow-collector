@@ -34,8 +34,8 @@ public class ReportProcessorRunnerImpl implements ReportProcessorRunner{
     }
 
     @Override
-    @Scheduled(initialDelayString = "${runners.initial-delay.in.milliseconds:10000}",
-               fixedDelayString = "${runners.fixed-delay.in.milliseconds:2000}")
+    @Scheduled(initialDelayString = "${yellow-collector.runners.initial-delay-in-milliseconds:10000}",
+               fixedDelayString = "${yellow-collector.runners.fixed-delay-in-milliseconds:2000}")
     public void runProcessing() throws IOException, InterruptedException {
 
         fillReportQueue();

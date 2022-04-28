@@ -1,0 +1,10 @@
+server:
+  port: 8091
+task:
+  scheduling:
+    pool:
+      size: 2
+yellow-collector:
+  sr-receiver:
+    storage:
+      temp: D:/temp/TempJavaDir

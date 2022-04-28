@@ -1,6 +1,6 @@
 package com.dmakarevich.yellow_collector.sr_processor.report.processors;
 
-import com.dmakarevich.yellow_collector.sr_processor.db.services.ReportProcessorDBService;
+import com.dmakarevich.yellow_collector.sr_processor.dao.services.ReportProcessorDBService;
 import com.dmakarevich.yellow_collector.sr_processor.report.exceptions.*;
 import com.dmakarevich.yellow_collector.sr_processor.report.model.file.FileReportErrorInfo;
 import com.dmakarevich.yellow_collector.sr_processor.report.ReportParser;

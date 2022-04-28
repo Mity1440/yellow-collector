@@ -11,3 +11,4 @@ rootProject.name = 'YellowCollector'
 
 include 'sr-receiver'
 include 'sr-processor'
+include 'general-requester'

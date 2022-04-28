@@ -1,7 +1,7 @@
 
 package com.dmakarevich.yellow_collector.sr_processor.report.model.file;
 
-import com.dmakarevich.yellow_collector.sr_processor.db.model.ReportErrorInfo;
+import com.dmakarevich.yellow_collector.sr_processor.dao.model.ReportErrorInfo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
