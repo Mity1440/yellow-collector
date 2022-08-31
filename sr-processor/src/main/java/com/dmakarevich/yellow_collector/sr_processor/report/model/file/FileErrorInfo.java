@@ -12,6 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class FileErrorInfo {
 
+    @SerializedName("userDescription")
+    @Expose
+    private String userDescription;
+
     @SerializedName("systemErrorInfo")
     @Expose
     private FileSystemErrorInfo systemErrorInfo;

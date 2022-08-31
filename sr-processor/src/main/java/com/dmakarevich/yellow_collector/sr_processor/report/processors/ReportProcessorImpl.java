@@ -1,6 +1,6 @@
 package com.dmakarevich.yellow_collector.sr_processor.report.processors;
 
-import com.dmakarevich.yellow_collector.sr_processor.dao.services.ReportProcessorDBService;
+import com.dmakarevich.yellow_collector.sr_processor.db.services.ReportProcessorDBService;
 import com.dmakarevich.yellow_collector.sr_processor.report.exceptions.*;
 import com.dmakarevich.yellow_collector.sr_processor.report.model.file.FileReportErrorInfo;
 import com.dmakarevich.yellow_collector.sr_processor.report.ReportParser;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
@@ -58,8 +59,8 @@ public class ReportProcessorImpl implements ReportProcessor{
             log.info("Report {} successfully processed", reportFile.getFileName().toString());
         } catch (Exception ex) {
             processReportResults.addUnsuccessfullyProcessedReport(reportFile);
-            log.error("Error during processing report {} {}. Problem report will be moved to the catalog of erroneous reports",
-                    reportFile.getFileName().toString(), ex);
+            log.error("Error during processing report {}. Problem report will be moved to the catalog of erroneous reports\n{}",
+                    reportFile.getFileName().toString(), ex.toString());
         }
 
     }
@@ -69,16 +70,18 @@ public class ReportProcessorImpl implements ReportProcessor{
     private FileReportErrorInfo getReportErrorInfoFromFileReport(Path reportFile) {
 
         FileReportErrorInfo errorInfo = null;
+
         try (ZipFile reportZip = new ZipFile(reportFile.toFile())){
 
             errorInfo = ReportParser.parse(getJsonContentFromZipFile(reportZip));
-            if (errorInfo.getId() == null) {
-                errorInfo.setId(getErrorInfoId(reportFile));
+            if (errorInfo == null){
+                throw new ReportProcessingParseException("Couldn't parse report file");
             }
+            errorInfo.setId(getErrorInfoId(reportFile));
 
-        }catch (IOException | ReportProcessingIOException ex){
+        }catch (IOException ex){
             throw new ReportProcessingIOException(ex);
-        } catch (Exception ex) { // остальные исключения относим к ошибкам парсинга
+        } catch (Exception ex) {
             throw new ReportProcessingParseException(ex);
         }
 

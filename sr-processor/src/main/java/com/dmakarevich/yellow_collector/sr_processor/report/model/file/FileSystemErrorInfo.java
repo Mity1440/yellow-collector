@@ -20,4 +20,12 @@ public class FileSystemErrorInfo {
     @Expose
     private String clientStackHash;
 
+    @SerializedName("serverStack")
+    @Expose
+    private String serverStack;
+
+    @SerializedName("serverStackHash")
+    @Expose
+    private String serverStackHash;
+
 }

@@ -12,7 +12,6 @@ import java.util.List;
 public class FileApplicationErrorInfoErrorsElement {
 
     private String errorDescription;
-
     private List<String> errorCategories;
 
 }

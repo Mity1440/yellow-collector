@@ -16,7 +16,7 @@ public class FileApplicationErrorInfo {
 
     @SerializedName("errors")
     @Expose
-    private List<FileApplicationErrorInfoErrorsElement> errors = null;
+    private FileApplicationErrorInfoErrors errors;
 
     @SerializedName("stack")
     @Expose

@@ -33,7 +33,7 @@ public class ReportProcessorProperties {
 
     public Optional<String> getStringReportStorageLocation(String locationName){
         if (storage != null){
-            return Optional.ofNullable(storage.get("root"));
+            return Optional.ofNullable(storage.get(locationName));
         }
         return Optional.empty();
     }
@@ -43,12 +43,10 @@ public class ReportProcessorProperties {
     //region Rotation
 
     public int getFileExistenceInRootLocationInDays(){
-
         if (rotation != null){
             return tryParseInt(
                     rotation.get("root-location-in-days"), 0);
         }
-
         return 0;
     }
 
@@ -57,7 +55,6 @@ public class ReportProcessorProperties {
             return tryParseInt(
                     rotation.get("error-location-in-days"), 0);
         }
-
         return 0;
     }
 

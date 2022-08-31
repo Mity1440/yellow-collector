@@ -15,6 +15,6 @@ public class GetInfoResponse {
 
     // Заглушка
     public static GetInfoResponse defaultInfo() {
-        return new GetInfoResponse(true,"",3);
+        return new GetInfoResponse(true,"Ошибка будет обработана",3);
     }
 }

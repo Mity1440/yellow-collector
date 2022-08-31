@@ -219,14 +219,14 @@ public class FileArchiveUtils {
         while (entries.hasMoreElements()) {
             var entry = entries.nextElement();
             if (!entry.isDirectory()
-                    && FileArchiveUtils.getFileExtensionByFullName(entry.getName())
+                    && getFileExtensionByFullName(entry.getName())
                     .orElse("")
                     .equalsIgnoreCase("json")) {
 
                 try (InputStream stream = zipFile.getInputStream(entry)) {
                     result = new String(stream.readAllBytes());
                 } catch (IOException ex) {
-                    throw new ReportProcessingIOException(ex);
+                    throw new RuntimeException(ex);
                 }
 
             }
