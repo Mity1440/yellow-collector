@@ -1,0 +1,22 @@
+task:
+  scheduling:
+    pool:
+      size: 2
+elasticsearch:
+  uris: localhost:9200
+yellow-collector:
+  sr-processor:
+    runners:
+      fixed-delay-in-milliseconds: 5000
+      initial-delay-in-milliseconds: 10000
+      worker-pool-size: 5
+      size-of-report-processing-queue: 100
+      timeout-on-report-processing-iteration-in-minutes: 5
+    storage:
+      temp: D:/temp/TempJavaDir
+      root: D:/temp/RootJavaDir
+      error: D:/temp/ErrorJavaDir
+    rotation:
+      root-location-in-days: 2
+      error-location-in-days: 2
+      purge-reports-cron: 0 0 23 * * *
