@@ -1,4 +1,4 @@
-package com.dmakarevich.yellow_collector.general_requester.view.responses;
+package com.dmakarevich.yellow_collector.general_requester.view.responses.support;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
