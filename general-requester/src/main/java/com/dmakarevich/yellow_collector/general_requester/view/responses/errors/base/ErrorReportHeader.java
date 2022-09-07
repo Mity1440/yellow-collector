@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
@@ -14,6 +15,7 @@ import java.util.Date;
 @Builder
 public class ErrorReportHeader {
 
+    @Id
     private String id;
     private Date time;
     private String clientInfoPlatformType;
