@@ -1,4 +1,4 @@
-package com.dmakarevich.yellow_collector.general_requester.view.responses.base;
+package com.dmakarevich.yellow_collector.general_requester.view.responses.errors.base;
 
 import com.dmakarevich.yellow_collector.general_requester.db.model.details.ErrorInfo;
 import lombok.Builder;

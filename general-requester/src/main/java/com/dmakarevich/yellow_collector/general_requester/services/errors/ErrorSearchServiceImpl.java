@@ -1,10 +1,10 @@
-package com.dmakarevich.yellow_collector.general_requester.services;
+package com.dmakarevich.yellow_collector.general_requester.services.errors;
 
 import com.dmakarevich.yellow_collector.general_requester.db.service.ErrorSearchDBService;
 import com.dmakarevich.yellow_collector.general_requester.view.requests.GetErrorReportHeadersRequest;
-import com.dmakarevich.yellow_collector.general_requester.view.responses.base.ErrorReportHeader;
-import com.dmakarevich.yellow_collector.general_requester.view.responses.GetErrorReportInfoDetailsResponse;
-import com.dmakarevich.yellow_collector.general_requester.view.responses.GetErrorReportHeadersResponse;
+import com.dmakarevich.yellow_collector.general_requester.view.responses.errors.base.ErrorReportHeader;
+import com.dmakarevich.yellow_collector.general_requester.view.responses.errors.GetErrorReportInfoDetailsResponse;
+import com.dmakarevich.yellow_collector.general_requester.view.responses.errors.GetErrorReportHeadersResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

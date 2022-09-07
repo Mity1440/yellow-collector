@@ -1,6 +1,6 @@
 package com.dmakarevich.yellow_collector.general_requester.controllers;
 
-import com.dmakarevich.yellow_collector.general_requester.view.responses.PingResponse;
+import com.dmakarevich.yellow_collector.general_requester.view.responses.support.PingResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 
