@@ -52,7 +52,7 @@
         </rollingPolicy>
     </appender>
 
-    <logger name="com.dmakarevich.yellow_collector.sr_receiver.controllers.filters.LogFilter" additivity="false">
+    <logger name="com.dmakarevich.yellow_collector.sr_receiver.controller.filters.LogFilter" additivity="false">
         <appender-ref ref="HttpConnection" />
         <appender-ref ref="Console" />
     </logger>

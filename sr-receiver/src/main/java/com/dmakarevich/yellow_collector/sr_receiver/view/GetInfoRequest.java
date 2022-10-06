@@ -1,4 +1,4 @@
-package com.dmakarevich.yellow_collector.sr_receiver.views;
+package com.dmakarevich.yellow_collector.sr_receiver.view;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

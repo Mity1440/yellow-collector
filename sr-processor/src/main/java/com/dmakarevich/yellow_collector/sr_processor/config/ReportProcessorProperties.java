@@ -1,4 +1,4 @@
-package com.dmakarevich.yellow_collector.sr_processor.configs;
+package com.dmakarevich.yellow_collector.sr_processor.config;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

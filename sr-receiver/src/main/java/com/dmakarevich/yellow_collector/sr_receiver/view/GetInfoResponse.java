@@ -1,4 +1,4 @@
-package com.dmakarevich.yellow_collector.sr_receiver.views;
+package com.dmakarevich.yellow_collector.sr_receiver.view;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,6 @@ public class GetInfoResponse {
     private String userMessage ;
     private int dumpType;
 
-    // Заглушка
     public static GetInfoResponse defaultInfo() {
         return new GetInfoResponse(true,"Ошибка будет обработана",3);
     }

@@ -1,4 +1,4 @@
-package com.dmakarevich.yellow_collector.sr_processor.configs;
+package com.dmakarevich.yellow_collector.sr_processor.config;
 
 import org.springframework.stereotype.Component;
 
@@ -8,9 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 @Component
 public class IndexNameProvider {
-
     public String timeSuffix(){
         return DateTimeFormatter.ISO_LOCAL_DATE.format(LocalDate.now(ZoneOffset.UTC));
     }
-
 }

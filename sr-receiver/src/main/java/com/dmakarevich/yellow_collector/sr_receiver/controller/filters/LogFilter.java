@@ -1,4 +1,4 @@
-package com.dmakarevich.yellow_collector.sr_receiver.controllers.filters;
+package com.dmakarevich.yellow_collector.sr_receiver.controller.filters;
 
 import lombok.extern.slf4j.Slf4j;
 

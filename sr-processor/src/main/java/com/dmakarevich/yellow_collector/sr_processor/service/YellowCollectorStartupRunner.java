@@ -1,6 +1,6 @@
 package com.dmakarevich.yellow_collector.sr_processor.service;
 
-import com.dmakarevich.yellow_collector.sr_processor.configs.ReportProcessorProperties;
+import com.dmakarevich.yellow_collector.sr_processor.config.ReportProcessorProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
