@@ -13,7 +13,7 @@ configurations {
 }
 
 springBoot {
-    mainClass = 'com.dmakarevich.yellow_collector.sr_processor.Main'
+    mainClass = 'com.dmakarevich.yellow_collector.general_requester.Main'
 }
 
 dependencies {

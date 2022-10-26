@@ -1,0 +1,1 @@
+docker build --tag=yellow-collector-receiver-centos --rm=true .             
