@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Data
@@ -11,7 +12,10 @@ import java.util.Date;
 @NoArgsConstructor
 public class GetErrorReportHeadersRequest {
 
+    @NotNull
     private Date from;
+    @NotNull
     private Date to;
+    private boolean includeDeletedMarkReports;
 
 }

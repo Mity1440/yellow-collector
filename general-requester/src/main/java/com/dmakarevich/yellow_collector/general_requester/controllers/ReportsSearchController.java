@@ -1,26 +1,25 @@
 package com.dmakarevich.yellow_collector.general_requester.controllers;
 
-import com.dmakarevich.yellow_collector.general_requester.services.errors.ErrorSearchService;
+import com.dmakarevich.yellow_collector.general_requester.services.error_report.ReportSearchService;
 import com.dmakarevich.yellow_collector.general_requester.view.requests.GetErrorReportHeadersRequest;
 import com.dmakarevich.yellow_collector.general_requester.view.responses.errors.GetErrorReportInfoDetailsResponse;
 import com.dmakarevich.yellow_collector.general_requester.view.responses.errors.GetErrorReportHeadersResponse;
-import lombok.extern.slf4j.Slf4j;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(value ="/api/v1/", produces = MediaType.APPLICATION_JSON_VALUE)
-@Slf4j
-public class ErrorSearchController {
+@RequiredArgsConstructor
+public class ReportsSearchController {
 
-    private final ErrorSearchService service;
-
-    public ErrorSearchController(ErrorSearchService searchEngine) {
-        this.service = searchEngine;
-    }
+    private final ReportSearchService service;
 
     @PostMapping(value = "/report-errors/list")
-    public GetErrorReportHeadersResponse getErrorHeaders(@RequestBody GetErrorReportHeadersRequest request){
+    public GetErrorReportHeadersResponse getErrorHeaders(@Valid @RequestBody GetErrorReportHeadersRequest request){
         return service.getErrorHeaders(request);
     }
 

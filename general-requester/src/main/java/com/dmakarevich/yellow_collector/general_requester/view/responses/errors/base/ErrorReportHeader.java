@@ -30,6 +30,7 @@ public class ErrorReportHeader {
     private String group;
     private String serverStackHash;
     private String clientStackHash;
+    private Boolean deletedMark;
 
     public static ErrorReportHeader fromModel(ReportHeader model) {
 
@@ -51,6 +52,7 @@ public class ErrorReportHeader {
                 .group(model.getGroup())
                 .serverStackHash(model.getServerStackHash())
                 .clientStackHash(model.getClientStackHash())
+                .deletedMark(model.getDeletedMark())
                 .build();
 
     }

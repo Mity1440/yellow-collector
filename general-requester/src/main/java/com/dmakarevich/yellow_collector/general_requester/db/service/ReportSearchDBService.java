@@ -20,19 +20,21 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-public class ErrorSearchDBService {
+public class ReportSearchDBService {
 
     private final ElasticsearchOperations elOps;
     private final QueryConstructor constructor;
 
-    public ErrorSearchDBService(ElasticsearchOperations elOps) {
+    public ReportSearchDBService(ElasticsearchOperations elOps) {
         this.elOps = elOps;
         this.constructor = new QueryConstructor();
     }
 
     public List<ReportHeader> getReportHeaders(GetErrorReportHeadersRequest request) {
         return elOps
-                .search(constructor.getQueryForGetReportHeaderRequest(request.getFrom(), request.getTo()),
+                .search(constructor.getQueryForGetReportHeaderRequest(request.getFrom(),
+                                                                      request.getTo(),
+                                                                      request.isIncludeDeletedMarkReports()),
                           ReportHeader.class,
                           IndexCoordinates.of("report-headers-*"))
                 .stream()

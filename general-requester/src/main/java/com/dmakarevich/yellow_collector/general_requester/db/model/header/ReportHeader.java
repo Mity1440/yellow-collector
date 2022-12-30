@@ -34,6 +34,7 @@ public class ReportHeader {
     private String group;
     private String serverStackHash;
     private String clientStackHash;
+    private Boolean deletedMark;
 
     public String getClientInfoAppVersion(){
         return clientInfo == null? "" : clientInfo.getAppVersion();

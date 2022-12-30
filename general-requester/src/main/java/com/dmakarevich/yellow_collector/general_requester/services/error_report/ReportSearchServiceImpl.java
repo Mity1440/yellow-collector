@@ -1,6 +1,6 @@
-package com.dmakarevich.yellow_collector.general_requester.services.errors;
+package com.dmakarevich.yellow_collector.general_requester.services.error_report;
 
-import com.dmakarevich.yellow_collector.general_requester.db.service.ErrorSearchDBService;
+import com.dmakarevich.yellow_collector.general_requester.db.service.ReportSearchDBService;
 import com.dmakarevich.yellow_collector.general_requester.view.requests.GetErrorReportHeadersRequest;
 import com.dmakarevich.yellow_collector.general_requester.view.responses.errors.base.ErrorReportHeader;
 import com.dmakarevich.yellow_collector.general_requester.view.responses.errors.GetErrorReportInfoDetailsResponse;
@@ -13,12 +13,12 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-public class ErrorSearchServiceImpl implements ErrorSearchService{
+public class ReportSearchServiceImpl implements ReportSearchService {
 
-    private final ErrorSearchDBService searchEngine;
+    private final ReportSearchDBService searchEngine;
 
     @Autowired
-    public ErrorSearchServiceImpl(ErrorSearchDBService searchEngine) {
+    public ReportSearchServiceImpl(ReportSearchDBService searchEngine) {
         this.searchEngine = searchEngine;
     }
 
