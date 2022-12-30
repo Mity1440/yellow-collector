@@ -1,6 +1,6 @@
 package com.dmakarevich.yellow_collector.sr_processor.report.processors;
 
-import com.dmakarevich.yellow_collector.sr_processor.configs.ReportProcessorProperties;
+import com.dmakarevich.yellow_collector.sr_processor.config.ReportProcessorProperties;
 import com.dmakarevich.yellow_collector.sr_processor.db.services.ReportProcessorDBService;
 import com.dmakarevich.yellow_collector.sr_processor.report.ProcessReportResults;
 ;
@@ -9,13 +9,11 @@ import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.concurrent.ArrayBlockingQueue;
 
 import java.util.concurrent.CountDownLatch;

@@ -1,0 +1,1 @@
+docker run --rm -p 8089:8089 -v D:\Docker\Test\openjdk-centos\services\receiver\Data:/var/yellow-receiver/temp yellow-collector-receiver-centos

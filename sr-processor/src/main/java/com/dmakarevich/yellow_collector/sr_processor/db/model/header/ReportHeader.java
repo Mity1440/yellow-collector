@@ -21,7 +21,6 @@ public class ReportHeader {
 
     @Id
     private String id;
-
     // Поля явно получаемые из отчета об ошибке. Служат для характеристики ошибки в целом
     @Field(type = FieldType.Date, name = "time")
     private Date time;
@@ -35,7 +34,6 @@ public class ReportHeader {
     private ServerInfo serverInfo;
     @Field(type = FieldType.Nested, name = "configInfo")
     private ConfigInfo configInfo;
-
     // Поля, которые будут использоваться для денормализации, чтобы упростить запросы для клиентов
     // без необходимости каскадных запросов
     @Field(type = FieldType.Text, name = "userDescription")
@@ -51,4 +49,8 @@ public class ReportHeader {
     private String serverStackHash;
     @Field(type = FieldType.Text, name = "clientStackHash")
     private String clientStackHash;
+    //  Сервисные поля
+    @Field(type=FieldType.Boolean, name = "deletedMark")
+    private Boolean deletedMark;
+
 }

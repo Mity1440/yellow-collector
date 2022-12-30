@@ -1,0 +1,1 @@
+mkdir -p /var/yellow-receiver/temp && chmod 666 /var/yellow-receiver/temp

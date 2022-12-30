@@ -1,0 +1,80 @@
+version: '3.3'
+
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.8
+    container_name: elasticsearch
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300 
+      
+  kibana:
+        image: docker.elastic.co/kibana/kibana:7.17.8
+        container_name: kibana
+        environment:
+          - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        ulimits:
+          memlock:
+            soft: -1
+            hard: -1
+          nofile:
+            soft: 65536
+            hard: 65536
+        cap_add:
+          - IPC_LOCK
+        ports:
+          - 5601:5601
+          
+  general-requester:
+    build:
+      context: services/general-requester
+      dockerfile: Dockerfile
+    command: java -Xmx2g -Xms2g -jar general-requester.jar --spring.config.name=requester
+    ports:
+      - 8090:8090
+    depends_on:
+      - elasticsearch
+
+  receiver:
+    build:
+      context: services/receiver
+      dockerfile: Dockerfile
+    command: java -Xmx2g -Xms2g -jar receiver.jar --spring.config.name=receiver
+    ports:
+      - 8089:8089
+    volumes:
+      - yellow-collector-temp:/var/yellow-receiver/temp
+
+  processor:
+    build:
+      context: services/processor
+      dockerfile: Dockerfile
+    command: java -Xmx2g -Xms2g -jar processor.jar --spring.config.name=processor
+    volumes:
+      - yellow-collector-temp:/var/yellow-processor/temp
+      - yellow-collector-root:/var/yellow-processor/root
+      - yellow-collector-error:/var/yellow-processor/error
+    depends_on:
+      - elasticsearch
+ 
+volumes:
+    elasticsearch-data:
+    yellow-collector-temp:
+    yellow-collector-root:
+    yellow-collector-error:

@@ -1,9 +1,7 @@
 plugins {
-    //support Idea IDE
     id 'idea'
+    id "org.springframework.boot" version "2.6.5"
     id "io.spring.dependency-management" version "1.0.10.RELEASE"
-    // Build uber-jar
-    id 'com.github.johnrengelman.shadow' version '6.1.0' apply true
 }
 
 idea {

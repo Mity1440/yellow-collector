@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-@ConfigurationPropertiesScan("com.dmakarevich.yellow_collector.sr_processor.configs")
+@ConfigurationPropertiesScan("com.dmakarevich.yellow_collector.sr_processor.config")
 public class Main {
 
     public static void main(String[] args) {

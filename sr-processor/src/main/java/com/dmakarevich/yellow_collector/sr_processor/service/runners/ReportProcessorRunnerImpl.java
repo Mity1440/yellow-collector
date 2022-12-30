@@ -1,6 +1,6 @@
 package com.dmakarevich.yellow_collector.sr_processor.service.runners;
 
-import com.dmakarevich.yellow_collector.sr_processor.configs.ReportProcessorProperties;
+import com.dmakarevich.yellow_collector.sr_processor.config.ReportProcessorProperties;
 import com.dmakarevich.yellow_collector.sr_processor.report.ProcessReportResults;
 import com.dmakarevich.yellow_collector.sr_processor.report.processors.ReportProcessor;
 

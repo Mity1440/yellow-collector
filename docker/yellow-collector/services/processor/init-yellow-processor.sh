@@ -1,0 +1,1 @@
+mkdir -p /var/yellow-processor/temp && chmod 666 /var/yellow-processor/temp && mkdir -p /var/yellow-processor/root && chmod 666 /var/yellow-processor/root && mkdir -p /var/yellow-processor/error && chmod 666 /var/yellow-processor/error

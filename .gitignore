@@ -37,3 +37,7 @@ out/
 .vscode/
 
 logs/
+
+temp/
+
+docker/yellow-collector/services/**/*.jar

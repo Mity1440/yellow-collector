@@ -1,15 +1,13 @@
 package com.dmakarevich.yellow_collector.sr_processor.service;
 
-import com.dmakarevich.yellow_collector.sr_processor.configs.ReportProcessorProperties;
+import com.dmakarevich.yellow_collector.sr_processor.config.ReportProcessorProperties;
 
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.nio.file.*;
 
 import static com.dmakarevich.yellow_collector.sr_processor.report.FileArchiveUtils.*;
 

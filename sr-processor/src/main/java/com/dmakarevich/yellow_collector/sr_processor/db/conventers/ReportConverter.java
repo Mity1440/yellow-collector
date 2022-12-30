@@ -35,6 +35,7 @@ public class ReportConverter {
                 .configInfo(configInfo)
                 .baseName(fileReportInfo.getBaseName())
                 .group(fileReportInfo.getGroup())
+                .deletedMark(false)
                 .build();
 
     }

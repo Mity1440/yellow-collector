@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "org.springframework.boot"
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -11,12 +12,17 @@ configurations {
 	}
 }
 
+springBoot {
+    mainClass = 'com.dmakarevich.yellow_collector.general_requester.Main'
+}
+
 dependencies {
     dependencies {
         implementation 'ch.qos.logback:logback-classic'
 
         implementation'org.springframework.boot:spring-boot-starter-web'
         implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
 
         // https://mvnrepository.com/artifact/com.google.code.gson/gson
         implementation 'com.google.code.gson:gson'
