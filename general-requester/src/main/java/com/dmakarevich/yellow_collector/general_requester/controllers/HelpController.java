@@ -18,6 +18,7 @@ public class HelpController {
 
     @RequestMapping(value = "/ping", method = {RequestMethod.GET, RequestMethod.POST})
     public PingResponse GetErrorHeaders(){
+
         return new PingResponse("", LocalDateTime.now().getLong(ChronoField.NANO_OF_SECOND));
     }
 

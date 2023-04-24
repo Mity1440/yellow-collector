@@ -10,12 +10,13 @@
         </layout>
     </appender>
 
-    <logger name="org.springframework.data.elasticsearch.client.WIRE" level="trace">
+
+    <logger name="org.springframework.data.elasticsearch.client.WIRE" level="info">
         <appender-ref ref="Console" />
     </logger>
 
 
-    <root level="Info">
+    <root level="info">
         <appender-ref ref="Console" />
     </root>
 
