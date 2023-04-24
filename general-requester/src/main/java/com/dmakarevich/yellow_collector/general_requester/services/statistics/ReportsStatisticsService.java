@@ -4,5 +4,6 @@ import com.dmakarevich.yellow_collector.general_requester.view.requests.GetBaseE
 import com.dmakarevich.yellow_collector.general_requester.view.responses.statistics.GetSummaryStatisticsReportResponse;
 
 public interface ReportsStatisticsService {
+
     GetSummaryStatisticsReportResponse getSummaryStatistics(GetBaseErrorReportAggregation request);
 }

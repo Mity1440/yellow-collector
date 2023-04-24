@@ -20,8 +20,7 @@ public class ReportsAggregationController {
 
     @PostMapping(value = "/report-errors/statistics/summary")
     public GetSummaryStatisticsReportResponse getSummaryStatisticsReport(GetBaseErrorReportAggregation request){
-        var a = service.getSummaryStatistics(request);
-        return a;
+        return service.getSummaryStatistics(request);
     }
 
 }

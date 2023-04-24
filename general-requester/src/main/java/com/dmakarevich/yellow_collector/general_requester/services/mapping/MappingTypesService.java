@@ -6,4 +6,6 @@ public interface MappingTypesService {
 
     MappingTypeDeclaration getErrorHeadersMapping();
 
+    MappingTypeDeclaration getSummaryStatisticsReportMapping();
+
 }

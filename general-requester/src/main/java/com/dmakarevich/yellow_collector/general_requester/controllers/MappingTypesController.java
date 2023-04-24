@@ -24,5 +24,10 @@ public class MappingTypesController {
         return service.getErrorHeadersMapping();
     }
 
+    @PostMapping(value = "/report-errors/statistics/summary/_mapping")
+    public MappingTypeDeclaration getSummaryStatisticsReportMapping(){
+        return service.getSummaryStatisticsReportMapping();
+    }
+
 
 }
